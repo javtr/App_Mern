@@ -5,7 +5,7 @@ import Saludar from './components/Saludar';
 
 function App() {
   let userInfo = {
-    name: "Javier Triana",
+    // name: "Javier Triana",
     age: "32"
   }
 
