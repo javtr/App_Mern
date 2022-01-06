@@ -1,23 +1,22 @@
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import "./components/Saludar";
-import Saludar from "./components/Saludar";
 
 function App() {
-  let userInfo = {
-    name: "Javier Triana",
-    age: "32",
-  };
 
-  const saludarFn = (nameFn, ageFn) => {
-    alert(`Hola ${nameFn}, tienes ${ageFn} años`);
+  const [stateCar, setStateCar] = useState(false);
+
+  const onOffFn = () => {
+    // setStateCar(!stateCar);
+    setStateCar(prevValue => !prevValue);
   };
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Saludar userInfo={userInfo} saludarFn={saludarFn} />
+        <h2>El Auto esta {stateCar ? "Encendido" : "Apagado"} </h2>
+        <button onClick={onOffFn}>Switch</button>
       </header>
     </div>
   );
