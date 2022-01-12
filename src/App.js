@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-
   const [stateCar, setStateCar] = useState(false);
+  const [contador, setContador] = useState(0);
 
   const onOffFn = () => {
-    // setStateCar(!stateCar);
-    setStateCar(prevValue => !prevValue);
+    setStateCar(!stateCar);
+    setContador(contador + 1);
   };
+
+  useEffect(() => {
+    console.log("Cont:" + contador);
+  }, [contador]);
 
   return (
     <div className="App">
